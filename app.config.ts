@@ -10,7 +10,7 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: ' - Vue Email',
+    siteName: 'Vue Email',
   },
   header: {
     logo: {
