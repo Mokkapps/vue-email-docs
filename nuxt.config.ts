@@ -27,8 +27,14 @@ export default defineNuxtConfig({
       'DM+Sans': [400, 500, 600, 700]
     }
   },
-  routeRules: {
-    '/api/search.json': { prerender: true },
+  nitro: {
+    prerender: {
+      routes: ['/', '/getting-started', '/api/search.json'],
+    },
+  },
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
   },
   // Devtools / Typescript
   devtools: { enabled: true },
