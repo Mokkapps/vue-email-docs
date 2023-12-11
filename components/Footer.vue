@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const { footer } = useAppConfig()
+const { footer, header } = useAppConfig()
 </script>
 
 <template>
-  <UFooter>
+  <UFooter :links="header.links">
     <template #left>
       {{ footer.credits }}
     </template>
@@ -11,9 +11,9 @@ const { footer } = useAppConfig()
     <template #right>
       <UColorModeButton v-if="footer?.colorMode" />
 
-      <template v-if="footer?.links">
+      <template v-if="header?.links">
         <UButton
-          v-for="(link, index) of footer?.links"
+          v-for="(link, index) of header?.socials"
           :key="index"
           v-bind="{ color: 'gray', variant: 'ghost', ...link }"
         />

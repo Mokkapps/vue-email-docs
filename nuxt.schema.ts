@@ -141,6 +141,13 @@ export default defineNuxtSchema({
           description: 'Array of link object displayed in header.',
           icon: 'i-mdi-link-variant',
           default: []
+        }),
+        socials: field({
+          type: 'array',
+          title: 'Links',
+          description: 'Array of link object displayed in right section of the header.',
+          icon: 'i-mdi-link-variant',
+          default: []
         })
       },
     }),
