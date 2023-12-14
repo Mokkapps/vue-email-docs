@@ -112,7 +112,7 @@ useSeoMeta({
             <p>monthly downloads</p>
           </NuxtLink>
 
-          <NuxtLink class="text-center group" to="https://github.com/Dave136/vue-email" target="_blank">
+          <NuxtLink class="text-center group" to="https://github.com/vue-email/vue-email" target="_blank">
             <p class="text-6xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400">
               {{ format(module.stats.stars) }}+
             </p>

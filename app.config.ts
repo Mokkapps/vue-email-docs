@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     primary: 'green',
-    gray: 'slate',
+    gray: 'neutral',
     footer: {
       bottom: {
         left: 'text-sm text-gray-500 dark:text-gray-400',
@@ -35,12 +35,12 @@ export default defineAppConfig({
         label: 'Releases',
         icon: 'i-heroicons-rocket-launch-solid',
         target: '_blank',
-        to: 'https://github.com/Dave136/vue-email/releases',
+        to: 'https://github.com/vue-email/vue-email/releases',
       },
     ],
     socials: [{
       icon: 'i-simple-icons-github',
-      to: 'https://github.com/Dave136/vue-email',
+      to: 'https://github.com/vue-email/vue-email',
       target: '_blank',
       'aria-label': 'Docs template on GitHub'
     }]
@@ -53,11 +53,11 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/Dave136/vue-email/edit/main/docs/content',
+      edit: 'https://github.com/vue-email/vue-email/edit/main/docs/content',
       links: [{
         icon: 'i-heroicons-star',
         label: 'Star on GitHub',
-        to: 'https://github.com/Dave136/vue-email',
+        to: 'https://github.com/vue-email/vue-email',
         target: '_blank',
       }]
     }
