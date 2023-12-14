@@ -12,6 +12,7 @@ links:
 Get the [Postmark Node.js SDK](https://www.npmjs.com/package/postmark).
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add postmark
 ```
@@ -21,6 +22,7 @@ yarn add postmark
 ```sh [npm]
 npm install postmark
 ```
+
 ::
 
 ## 2. Create an email using Vue

@@ -12,6 +12,7 @@ links:
 Get the [AWS SES Node.js SDK](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-ses/).
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add @aws-sdk/client-ses
 ```
@@ -21,6 +22,7 @@ yarn add @aws-sdk/client-ses
 ```sh [npm]
 npm install @aws-sdk/client-ses
 ```
+
 ::
 
 ## 2. Create an email using Vue

@@ -12,6 +12,7 @@ links:
 Get the [MailerSend Node.js SDK](https://www.npmjs.com/package/mailersend).
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add mailersend
 ```
@@ -21,6 +22,7 @@ yarn add mailersend
 ```sh [npm]
 npm install mailersend
 ```
+
 ::
 
 ## 2. Create an email using Vue

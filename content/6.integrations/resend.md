@@ -12,6 +12,7 @@ links:
 Get the [resend](https://www.npmjs.com/package/resend) packages.
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add resend
 ```
@@ -21,6 +22,7 @@ yarn add resend
 ```sh [npm]
 npm install resend
 ```
+
 ::
 
 ## 2. Create an email using Vue

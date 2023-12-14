@@ -12,6 +12,7 @@ links:
 Get the [Plunk Node.js SDK](https://www.npmjs.com/package/@plunk/node).
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add @plunk/node
 ```
@@ -21,6 +22,7 @@ yarn add @plunk/node
 ```sh [npm]
 npm install @plunk/node
 ```
+
 ::
 
 ## 2. Create an email using Vue

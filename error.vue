@@ -11,11 +11,6 @@ defineProps<{
   error: NuxtError
 }>()
 
-useHead({
-  htmlAttrs: {
-    lang: 'en'
-  }
-})
 
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
 const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {

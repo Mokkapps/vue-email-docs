@@ -12,6 +12,7 @@ links:
 Get the [nodemailer](https://www.npmjs.com/package/nodemailer) package.
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add nodemailer
 ```
@@ -21,6 +22,7 @@ yarn add nodemailer
 ```sh [npm]
 npm install nodemailer
 ```
+
 ::
 
 ## 2. Create an email using Vue

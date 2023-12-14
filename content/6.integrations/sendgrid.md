@@ -12,6 +12,7 @@ links:
 Get the [SendGrid Node.js SDK](https://www.npmjs.com/package/@sendgrid/mail).
 
 ::code-group
+
 ```sh [pnpm]
 pnpm add @sendgrid/mail
 ```
@@ -21,6 +22,7 @@ yarn add @sendgrid/mail
 ```sh [npm]
 npm install @sendgrid/mail
 ```
+
 ::
 
 ## 2. Create an email using Vue

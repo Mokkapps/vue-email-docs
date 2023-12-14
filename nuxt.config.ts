@@ -1,16 +1,14 @@
-import { withoutTrailingSlash } from 'ufo'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
-    '@nuxthq/studio',
     '@nuxtjs/fontaine',
     '@nuxtjs/google-fonts',
     'nuxt-og-image',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@vue-email/nuxt'
   ],
   ui: {
     global: true,
@@ -51,5 +49,5 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' },
       ]
     }
-  }
+  },
 })
