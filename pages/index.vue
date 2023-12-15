@@ -27,8 +27,8 @@ useSeoMeta({
   ogTitle: page.value.title,
   description: page.value.description,
   ogDescription: page.value.description,
-  ogImage: 'https://www.vuemail.net/social-preview.jpg',
-  twitterImage: 'https://www.vuemail.net/social-preview.jpg',
+  ogImage: 'https://vuemail.net/social-preview.jpg',
+  twitterImage: 'https://vuemail.net/social-preview.jpg',
 })
 
 </script>
