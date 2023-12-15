@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { resolveComponent } from 'vue'
+import { useRender } from 'vue-email'
 
 const emailTemplate = resolveComponent('EmailTemplate') as Component
 

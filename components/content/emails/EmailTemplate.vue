@@ -1,4 +1,6 @@
 <script setup>
+import { EHtml, EHead, EPreview, EBody, EContainer, ESection, EImg, ERow, EColumn, EHeading, EText } from 'vue-email'
+
 const props = defineProps({
   userFirstName: {
     type: String,
