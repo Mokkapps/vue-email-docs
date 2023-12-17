@@ -10,5 +10,5 @@ const html = await useRender(emailTemplate, undefined, {
 </script>
 
 <template>
-  <iframe :srcdoc="html" class="h-[1000px] w-full" frameborder="0" width="100%" />
+  <iframe :srcdoc="html.html" class="h-[1000px] w-full" frameborder="0" width="100%" />
 </template>
