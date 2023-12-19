@@ -29,10 +29,9 @@ npm install postmark
 
 Start by building your email template in a `.vue` file.
 
-
 ```vue [emails/welcome.vue]
 <script lang="ts" setup>
-defineProps<{ url: string }>();
+defineProps<{ url: string }>()
 </script>
 
 <template>
@@ -52,10 +51,10 @@ Import the email template you just built, convert into a HTML string, and use th
 
 ```ts [Nuxt 3]
 // server/api/send-email.post.ts
+import postmark from 'postmark'
 import { useCompiler } from '#vue-email'
-import postmark from 'postmark';
 
-const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY);
+const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY)
 
 export default defineEventHandler(async (event) => {
   const template = await useCompiler('welcome.vue', {
@@ -69,45 +68,45 @@ export default defineEventHandler(async (event) => {
     To: 'user@gmail.com',
     Subject: 'hello world',
     HtmlBody: template,
-  };
+  }
 
-  await client.sendEmail(options);
-  return { message: 'Email sent' };
-});
+  await client.sendEmail(options)
+  return { message: 'Email sent' }
+})
 ```
 
 ```ts [NodeJs]
-import express from 'express';
-import postmark from 'postmark';
-import { config } from "vue-email/compiler";
+import express from 'express'
+import postmark from 'postmark'
+import { config } from 'vue-email/compiler'
 
-const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY);
+const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY)
 
-const app = express();
-const vueEmail = config("./emails");
+const app = express()
+const vueEmail = config('./emails')
 
-app.use(express.json());
+app.use(express.json())
 
 app.post('/api/send-email', async (req, res) => {
-  const template = await vueEmail.render("welcome.vue", {
-      props: {
-        url: 'https://vuemail.net/',
-      },
-    });
+  const template = await vueEmail.render('welcome.vue', {
+    props: {
+      url: 'https://vuemail.net/',
+    },
+  })
 
   const options = {
     From: 'you@example.com',
     To: 'user@gmail.com',
     Subject: 'hello world',
     HtmlBody: template,
-  };
+  }
 
-  await client.sendEmail(options);
+  await client.sendEmail(options)
 
-  return res.json({ message: "Email sent" });
-});
+  return res.json({ message: 'Email sent' })
+})
 
-app.listen(3001);
+app.listen(3001)
 ```
 
 ::

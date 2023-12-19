@@ -2,9 +2,10 @@
 import type { NavItem } from '@nuxt/content/dist/runtime/types'
 
 const navigation = inject<NavItem[]>('navigation', [])
+const { metaSymbol } = useShortcuts()
+const stats = useStats()
 
 const { header } = useAppConfig()
-
 </script>
 
 <template>
@@ -22,20 +23,22 @@ const { header } = useAppConfig()
       </template>
     </template>
 
-
-
     <template #right>
-      <UDocsSearchButton v-if="header?.search" :label="null" />
-
-      <UColorModeButton v-if="header?.colorMode" />
-
-      <template v-if="header?.links">
+      <UTooltip text="Search" :shortcuts="[metaSymbol, 'K']">
+        <UDocsSearchButton v-if="header?.search" :label="null" />
+      </UTooltip>
+      <UTooltip :text="$colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+        <UColorModeButton v-if="header?.colorMode" />
+      </UTooltip>
+      <UTooltip text="GitHub Stars">
         <UButton
-          v-for="(link, index) of header.socials"
-          :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+          icon="i-simple-icons-github"
+          to="https://github.com/vue-email/vue-email"
+          target="_blank"
+          :label="stats && stats.stats && stats.stats.stars ? formatNumber(stats.stats.stars) : '...'"
+          v-bind="$ui.button.secondary as any"
         />
-      </template>
+      </UTooltip>
     </template>
 
     <template #panel>

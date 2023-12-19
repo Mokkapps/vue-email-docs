@@ -5,9 +5,9 @@ export default defineAppConfig({
     footer: {
       bottom: {
         left: 'text-sm text-gray-500 dark:text-gray-400',
-        wrapper: 'border-t border-gray-200 dark:border-gray-800'
-      }
-    }
+        wrapper: 'border-t border-gray-200 dark:border-gray-800',
+      },
+    },
   },
   seo: {
     siteName: 'Vue Email',
@@ -16,7 +16,7 @@ export default defineAppConfig({
     logo: {
       alt: '',
       light: '',
-      dark: ''
+      dark: '',
     },
     search: true,
     colorMode: true,
@@ -44,11 +44,11 @@ export default defineAppConfig({
       },
     ],
     socials: [{
-      icon: 'i-simple-icons-github',
-      to: 'https://github.com/vue-email/vue-email',
-      target: '_blank',
-      'aria-label': 'Docs template on GitHub'
-    }]
+      'icon': 'i-simple-icons-github',
+      'to': 'https://github.com/vue-email/vue-email',
+      'target': '_blank',
+      'aria-label': 'Docs template on GitHub',
+    }],
   },
   footer: {
     credits: 'Published under MIT License - Copyright © 2023',
@@ -64,7 +64,7 @@ export default defineAppConfig({
         label: 'Star on GitHub',
         to: 'https://github.com/vue-email/vue-email',
         target: '_blank',
-      }]
-    }
-  }
+      }],
+    },
+  },
 })

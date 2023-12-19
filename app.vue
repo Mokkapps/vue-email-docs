@@ -6,13 +6,12 @@ const { seo } = useAppConfig()
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
 const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
   default: () => [],
-  server: false
+  server: false,
 })
-
 
 useSeoMeta({
   ogSiteName: seo?.siteName,
-  twitterCard: 'summary_large_image'
+  twitterCard: 'summary_large_image',
 })
 
 provide('navigation', navigation)

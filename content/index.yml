@@ -1,4 +1,4 @@
-title: 'VueEmail - Build and send emails using Vue'
+title: VueEmail - Build and send emails using Vue
 description: 'Vue Email provides everything related to Building and sending emails using Vue. This includes components, render utilities, published under MIT License.'
 navigation: false
 hero:
@@ -7,15 +7,15 @@ hero:
   orientation: horizontal
   align: left
   links:
-    - label: 'Get started'
-      icon: 'i-heroicons-rocket-launch'
-      to: '/getting-started'
+    - label: Get started
+      icon: i-heroicons-rocket-launch
+      to: /getting-started
       size: xl
-    - label: 'Sponsor us'
-      icon: 'i-ph-hand-heart-duotone'
-      color: 'white'
+    - label: Sponsor us
+      icon: i-ph-hand-heart-duotone
+      color: white
       to: 'https://github.com/sponsors/vue-email'
-      target: '_blank'
+      target: _blank
       size: xl
   code: |
     ```bash [Terminal]
@@ -24,27 +24,27 @@ hero:
 features:
   title: 'Build and send emails using :br [Vue and TypeScript.]{.text-primary}'
   items:
-    - title: 'SSR'
-      description: 'Streamline the process of rendering and dispatching emails directly from your server.'
-      icon: 'i-solar-server-2-bold-duotone'
-      to: '/ssr/introduction'
-    - title: 'i18n'
-      description: 'Sprinkle some global flavor onto your vue email templates with our new i18n feature!'
-      icon: 'i-solar-globus-bold-duotone'
-      to: '/plugins/i18n'
+    - title: SSR
+      description: Streamline the process of rendering and dispatching emails directly from your server.
+      icon: i-solar-server-2-bold-duotone
+      to: /ssr/introduction
+    - title: i18n
+      description: Sprinkle some global flavor onto your vue email templates with our new i18n feature!
+      icon: i-solar-globus-bold-duotone
+      to: /plugins/i18n
     - title: '15+ Components'
       description: 'Simplify email creation by providing ready-made components, eliminating the need for table-based layouts and outdated markup.'
-      icon: 'i-solar-code-line-duotone'
-      to: '/components/html'
-    - title: 'Integrations'
-      description: 'Use your favorite email provider with VueEmail. Any Node.js email provider can be used with VueEmail.'
-      icon: 'i-solar-bolt-line-duotone'
-      to: '/integrations/mailersend'
-    - title: 'Tailwind CSS'
-      description: 'Deliver visually stunning email templates with the incredible power of Tailwind CSS.'
-      icon: 'i-solar-palette-round-line-duotone'
-      to: '/components/tailwind'
-    - title: 'Nuxt Devtools'
-      description: 'Inspect your email templates and send test emails from your app directly.'
-      icon: 'i-solar-atom-line-duotone'
-      to: '/plugins/devtools'
+      icon: i-solar-code-line-duotone
+      to: /components/html
+    - title: Integrations
+      description: Use your favorite email provider with VueEmail. Any Node.js email provider can be used with VueEmail.
+      icon: i-solar-bolt-line-duotone
+      to: /integrations/mailersend
+    - title: Tailwind CSS
+      description: Deliver visually stunning email templates with the incredible power of Tailwind CSS.
+      icon: i-solar-palette-round-line-duotone
+      to: /components/tailwind
+    - title: Nuxt Devtools
+      description: Inspect your email templates and send test emails from your app directly.
+      icon: i-solar-atom-line-duotone
+      to: /plugins/devtools

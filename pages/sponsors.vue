@@ -2,13 +2,12 @@
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
-if (!page.value) {
+if (!page.value)
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
 
 // const { data: sponsors } = await useFetch('https://api.nuxt.com/sponsors')
 const sponsors = ref({
-  platinum:[{sponsorId:'test',sponsorName:'Amazon Web Services',sponsorLogo:'https://avatars.githubusercontent.com/u/2232217?v=4',sponsorUrl:'https://amazon.com/aws',monthlyPriceInDollars:2500},{sponsorId:'vercel',sponsorName:'Vercel',sponsorLogo:'https://avatars.githubusercontent.com/u/14985020?v=4',sponsorUrl:'https://vercel.com',monthlyPriceInDollars:2500},{sponsorId:'HeadshotPro',sponsorName:'HeadshotPro',sponsorLogo:'https://avatars.githubusercontent.com/u/138780549?v=4',sponsorUrl:'https://www.headshotpro.com',monthlyPriceInDollars:1000},{sponsorId:'planfredapp',sponsorName:'PLANFRED',sponsorLogo:'https://images.opencollective.com/planfredapp/4ae56a1/logo/460.png',sponsorUrl:'https://www.planfred.com',monthlyPriceInDollars:1000},{sponsorId:'strapijs',sponsorName:'Strapi',sponsorLogo:'https://images.opencollective.com/strapijs/d5c9a68/logo/460.png',sponsorUrl:'https://strapi.io/',monthlyPriceInDollars:1000},{sponsorId:'2021-frameworks-fund',sponsorName:'Chrome Frameworks Fund',sponsorLogo:'https://images.opencollective.com/2021-frameworks-fund/logo/460.png',sponsorUrl:'https://opencollective.com/2021-frameworks-fund',monthlyPriceInDollars:2500}]
+  platinum: [{ sponsorId: 'test', sponsorName: 'Amazon Web Services', sponsorLogo: 'https://avatars.githubusercontent.com/u/2232217?v=4', sponsorUrl: 'https://amazon.com/aws', monthlyPriceInDollars: 2500 }, { sponsorId: 'vercel', sponsorName: 'Vercel', sponsorLogo: 'https://avatars.githubusercontent.com/u/14985020?v=4', sponsorUrl: 'https://vercel.com', monthlyPriceInDollars: 2500 }, { sponsorId: 'HeadshotPro', sponsorName: 'HeadshotPro', sponsorLogo: 'https://avatars.githubusercontent.com/u/138780549?v=4', sponsorUrl: 'https://www.headshotpro.com', monthlyPriceInDollars: 1000 }, { sponsorId: 'planfredapp', sponsorName: 'PLANFRED', sponsorLogo: 'https://images.opencollective.com/planfredapp/4ae56a1/logo/460.png', sponsorUrl: 'https://www.planfred.com', monthlyPriceInDollars: 1000 }, { sponsorId: 'strapijs', sponsorName: 'Strapi', sponsorLogo: 'https://images.opencollective.com/strapijs/d5c9a68/logo/460.png', sponsorUrl: 'https://strapi.io/', monthlyPriceInDollars: 1000 }, { sponsorId: '2021-frameworks-fund', sponsorName: 'Chrome Frameworks Fund', sponsorLogo: 'https://images.opencollective.com/2021-frameworks-fund/logo/460.png', sponsorUrl: 'https://opencollective.com/2021-frameworks-fund', monthlyPriceInDollars: 2500 }],
 })
 
 const title = page.value.head?.title || page.value.title
@@ -18,14 +17,14 @@ useSeoMeta({
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Community`
+  ogTitle: `${title} · Community`,
 })
 
 defineOgImage({
   component: 'Docs',
   title,
   description,
-  headline: 'Community'
+  headline: 'Community',
 })
 </script>
 

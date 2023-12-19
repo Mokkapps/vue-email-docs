@@ -29,10 +29,9 @@ npm install @plunk/node
 
 Start by building your email template in a `.vue` file.
 
-
 ```vue [emails/welcome.vue]
 <script lang="ts" setup>
-defineProps<{ url: string }>();
+defineProps<{ url: string }>()
 </script>
 
 <template>
@@ -52,10 +51,10 @@ Import the email template you just built, convert into a HTML string, and use th
 
 ```ts [Nuxt 3]
 // server/api/send-email.post.ts
+import Plunk from '@plunk/node'
 import { useCompiler } from '#vue-email'
-import Plunk from '@plunk/node';
 
-const plunk = new Plunk(process.env.PLUNK_API_KEY);
+const plunk = new Plunk(process.env.PLUNK_API_KEY)
 
 export default defineEventHandler(async (event) => {
   const template = await useCompiler('welcome.vue', {
@@ -65,44 +64,44 @@ export default defineEventHandler(async (event) => {
   })
 
   await plunk.emails.send({
-    to: "hello@useplunk.com",
-    subject: "Hello world",
+    to: 'hello@useplunk.com',
+    subject: 'Hello world',
     body: template,
-  });
+  })
 
-  return { message: 'Email sent' };
-});
+  return { message: 'Email sent' }
+})
 ```
 
 ```ts [NodeJs]
-import express from 'express';
-import Plunk from '@plunk/node';
-import { config } from "vue-email/compiler";
+import express from 'express'
+import Plunk from '@plunk/node'
+import { config } from 'vue-email/compiler'
 
-const plunk = new Plunk(process.env.PLUNK_API_KEY);
+const plunk = new Plunk(process.env.PLUNK_API_KEY)
 
-const app = express();
-const vueEmail = config("./emails");
+const app = express()
+const vueEmail = config('./emails')
 
-app.use(express.json());
+app.use(express.json())
 
 app.post('/api/send-email', async (req, res) => {
-  const template = await vueEmail.render("welcome.vue", {
-      props: {
-        url: 'https://vuemail.net/',
-      },
-    });
+  const template = await vueEmail.render('welcome.vue', {
+    props: {
+      url: 'https://vuemail.net/',
+    },
+  })
 
   await plunk.emails.send({
-    to: "hello@useplunk.com",
-    subject: "Hello world",
+    to: 'hello@useplunk.com',
+    subject: 'Hello world',
     body: template,
-  });
+  })
 
-  return res.json({ message: "Email sent" });
-});
+  return res.json({ message: 'Email sent' })
+})
 
-app.listen(3001);
+app.listen(3001)
 ```
 
 ::

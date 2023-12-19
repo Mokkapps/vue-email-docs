@@ -4,8 +4,8 @@ navigation.title: Sponsors
 head.description: Vue Email is an open-source framework totally free to use.
 navigation.icon: i-ph-hand-heart-duotone
 links:
-  - label: 'Become a sponsor'
+  - label: Become a sponsor
     to: 'https://github.com/sponsors/vue-email'
-    color: 'black'
-    size: 'lg'
-    target: '_blank'
+    color: black
+    size: lg
+    target: _blank

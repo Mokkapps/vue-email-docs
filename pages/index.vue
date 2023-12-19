@@ -3,17 +3,7 @@ import { breakpointsTailwind } from '@vueuse/core'
 
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 
-const { data: module } = await useFetch<{
-  stats: {
-    downloads: number
-    stars: number
-  }
-  contributors: {
-    username: string
-  }[]
-}>('https://api.nuxt.com/modules/vue-email', {
-  transform: ({ stats, contributors }) => ({ stats, contributors }),
-})
+const module = useStats()
 
 const { format } = Intl.NumberFormat('en-GB', { notation: 'compact' })
 const breakpoints = useBreakpoints(breakpointsTailwind)
@@ -30,7 +20,6 @@ useSeoMeta({
   ogImage: 'https://vuemail.net/social-preview.jpg',
   twitterImage: 'https://vuemail.net/social-preview.jpg',
 })
-
 </script>
 
 <template>

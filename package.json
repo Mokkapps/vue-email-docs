@@ -1,7 +1,7 @@
 {
   "name": "vue-email-docs",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
     "analyze": "nuxt analyze"
   },
@@ -25,10 +26,11 @@
     "nuxt-og-image": "3.0.0-rc.11"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.4.6",
     "@iconify-json/ph": "^1.1.9",
     "@iconify-json/solar": "^1.1.9",
     "@nuxt/devtools": "1.0.6",
-    "@nuxt/eslint-config": "^0.2.0",
+    "@octokit/rest": "^20.0.2",
     "@vueuse/nuxt": "^10.7.0",
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",

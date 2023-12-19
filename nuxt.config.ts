@@ -1,4 +1,3 @@
-
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   modules: [
@@ -8,22 +7,22 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-og-image',
     '@vueuse/nuxt',
-    '@vue-email/nuxt'
+    '@vue-email/nuxt',
   ],
   ui: {
     global: true,
-    icons: ['heroicons', 'simple-icons', 'solar', 'ph']
+    icons: ['heroicons', 'simple-icons', 'solar', 'ph'],
   },
   // Fonts
   fontMetrics: {
-    fonts: ['DM Sans']
+    fonts: ['DM Sans'],
   },
   googleFonts: {
     display: 'swap',
     download: true,
     families: {
-      'DM+Sans': [400, 500, 600, 700]
-    }
+      'DM+Sans': [400, 500, 600, 700],
+    },
   },
   nitro: {
     prerender: {
@@ -47,7 +46,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' },
-      ]
-    }
+      ],
+    },
   },
 })

@@ -29,10 +29,9 @@ npm install nodemailer
 
 Start by building your email template in a `.vue` file.
 
-
 ```vue [emails/welcome.vue]
 <script lang="ts" setup>
-defineProps<{ url: string }>();
+defineProps<{ url: string }>()
 </script>
 
 <template>
@@ -52,8 +51,8 @@ Import the email template you just built, convert into a HTML string, and use th
 
 ```ts [Nuxt 3]
 // server/api/send-email.post.ts
+import nodemailer from 'nodemailer'
 import { useCompiler } from '#vue-email'
-import nodemailer from 'nodemailer';
 
 export default defineEventHandler(async (event) => {
   const template = await useCompiler('welcome.vue', {
@@ -62,7 +61,7 @@ export default defineEventHandler(async (event) => {
     }
   })
 
-  const testAccount = await nodemailer.createTestAccount();
+  const testAccount = await nodemailer.createTestAccount()
 
   const transporter = nodemailer.createTransport({
     host: process.env.HOST || 'smtp.ethereal.email',
@@ -72,38 +71,38 @@ export default defineEventHandler(async (event) => {
       user: testAccount.user,
       pass: testAccount.pass,
     },
-  });
+  })
 
   const options = {
     from: 'you@example.com',
     to: 'user@gmail.com',
     subject: 'hello world',
     html: template,
-  };
+  }
 
-  await transporter.sendMail(options);
-  return { message: 'Email sent' };
-});
+  await transporter.sendMail(options)
+  return { message: 'Email sent' }
+})
 ```
 
 ```ts [NodeJs]
-import express from 'express';
-import nodemailer from 'nodemailer';
-import { config } from "vue-email/compiler";
+import express from 'express'
+import nodemailer from 'nodemailer'
+import { config } from 'vue-email/compiler'
 
-const app = express();
-const vueEmail = config("./emails");
+const app = express()
+const vueEmail = config('./emails')
 
-app.use(express.json());
+app.use(express.json())
 
 app.post('/api/send-email', async (req, res) => {
-  const template = await vueEmail.render("welcome.vue", {
-      props: {
-        url: 'https://vuemail.net/',
-      },
-    });
+  const template = await vueEmail.render('welcome.vue', {
+    props: {
+      url: 'https://vuemail.net/',
+    },
+  })
 
-  const testAccount = await nodemailer.createTestAccount();
+  const testAccount = await nodemailer.createTestAccount()
 
   const transporter = nodemailer.createTransport({
     host: process.env.HOST || 'smtp.ethereal.email',
@@ -113,21 +112,21 @@ app.post('/api/send-email', async (req, res) => {
       user: testAccount.user,
       pass: testAccount.pass,
     },
-  });
+  })
 
   const options = {
     from: 'you@example.com',
     to: 'user@gmail.com',
     subject: 'hello world',
     html: template,
-  };
+  }
 
-  await transporter.sendMail(options);
+  await transporter.sendMail(options)
 
-  return res.json({ message: "Email sent" });
-});
+  return res.json({ message: 'Email sent' })
+})
 
-app.listen(3001);
+app.listen(3001)
 ```
 
 ::
