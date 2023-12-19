@@ -3,7 +3,7 @@ description: 'Vue Email provides everything related to Building and sending emai
 navigation: false
 hero:
   title: 'The next generation of writing [emails]{.text-primary}'
-  description: 'Create your documentation in seconds with this template!'
+  description: 'A collection of high-quality, unstyled components for creating beautiful emails using Vue and TypeScript.'
   orientation: horizontal
   align: left
   links:
