@@ -37,6 +37,11 @@ export default defineAppConfig({
         target: '_blank',
         to: 'https://github.com/vue-email/vue-email/releases',
       },
+      {
+        label: 'Sponsors',
+        icon: 'i-ph-hand-heart-duotone',
+        to: '/sponsors',
+      },
     ],
     socials: [{
       icon: 'i-simple-icons-github',
