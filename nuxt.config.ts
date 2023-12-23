@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/', '/getting-started', '/api/search.json', '/api/stats'],
+      routes: ['/', '/getting-started', '/api/search.json', '/api/stats', '/api/releases.json', '/api/pulls.json'],
     },
   },
   site: {
