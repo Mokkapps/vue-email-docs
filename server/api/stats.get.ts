@@ -1,10 +1,6 @@
 import { Octokit } from '@octokit/rest'
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-})
-
-export default defineEventHandler(async (_) => {
+export default cachedEventHandler(async (_) => {
   const npmData = await fetch('https://api.npmjs.org/downloads/point/last-month/vue-email')
     .then(res => res.json())
     .catch(() => {
@@ -14,18 +10,12 @@ export default defineEventHandler(async (_) => {
       })
     })
 
-  // const githubData = await fetch('https://api.github.com/repos/vue-email/vue-email', {
-  //   headers: {
-  //     Authorization: `token ${githubToken}`,
-  //   },
-  // })
-  //   .then(res => res.json())
-  //   .catch(() => {
-  //     throw createError({
-  //       statusCode: 400,
-  //       statusMessage: 'Bad Request',
-  //     })
-  //   })
+  if (!process.env.GITHUB_TOKEN)
+    return []
+
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_TOKEN,
+  })
 
   const githubData = await octokit.repos.get({
     owner: 'vue-email',
@@ -66,4 +56,6 @@ export default defineEventHandler(async (_) => {
       }))
       : [],
   }
+}, {
+  maxAge: 60 * 60,
 })

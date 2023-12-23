@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@vueuse/nuxt',
     '@vue-email/nuxt',
+    'nuxt-seo-experiments',
   ],
   ui: {
     global: true,
@@ -29,6 +30,9 @@ export default defineNuxtConfig({
       routes: ['/', '/getting-started', '/api/search.json', '/api/stats'],
     },
   },
+  site: {
+    name: 'Vue Email',
+  },
   colorMode: {
     preference: 'dark',
     fallback: 'dark',
@@ -38,6 +42,7 @@ export default defineNuxtConfig({
   typescript: { strict: false },
   app: {
     head: {
+      titleTemplate: `%s %separator %site.name`,
       htmlAttrs: {
         lang: 'en',
       },
