@@ -11,12 +11,12 @@ hero:
       icon: i-heroicons-rocket-launch
       to: /getting-started
       size: xl
-    # - label: Sponsor us
-    #   icon: i-ph-hand-heart-duotone
-    #   color: white
-    #   to: 'https://github.com/sponsors/vue-email'
-    #   target: _blank
-    #   size: xl
+    - label: Sponsor us
+      icon: i-ph-hand-heart-duotone
+      color: white
+      to: 'https://github.com/sponsors/vue-email'
+      target: _blank
+      size: xl
   code: |
     ```bash [Terminal]
     npx nuxi init -t github:nuxt-ui-pro/docs

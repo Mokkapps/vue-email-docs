@@ -36,11 +36,11 @@ export default defineAppConfig({
         icon: 'i-heroicons-rocket-launch-solid',
         to: '/releases',
       },
-      // {
-      //   label: 'Sponsors',
-      //   icon: 'i-ph-hand-heart-duotone',
-      //   to: '/sponsors',
-      // },
+      {
+        label: 'Sponsors',
+        icon: 'i-ph-hand-heart-duotone',
+        to: '/sponsors',
+      },
     ],
     socials: [{
       'icon': 'i-simple-icons-github',
