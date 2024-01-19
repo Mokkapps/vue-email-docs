@@ -3,7 +3,7 @@ import { breakpointsTailwind } from '@vueuse/core'
 
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 
-const module = useStats()
+const stats = useStats()
 
 const { format } = Intl.NumberFormat('en-GB', { notation: 'compact' })
 const breakpoints = useBreakpoints(breakpointsTailwind)
@@ -42,7 +42,7 @@ useSeoMeta({
       </UPageGrid>
     </ULandingSection>
 
-    <ULandingSection class="!pt-0">
+    <ULandingSection v-if="stats" class="!pt-0">
       <ULandingCTA
         align="left"
         card
@@ -67,7 +67,7 @@ useSeoMeta({
           <ClientOnly>
             <UAvatarGroup :max="xlAndLarger ? 13 : lgAndLarger ? 10 : mdAndLarger ? 16 : 8" size="md" class="flex-wrap-reverse [&_span:first-child]:text-xs justify-center">
               <UTooltip
-                v-for="(contributor, index) of module.contributors"
+                v-for="(contributor, index) of stats.contributors"
                 :key="index"
                 :text="contributor.username"
                 class="rounded-full"
@@ -96,14 +96,14 @@ useSeoMeta({
         <div class="flex flex-col sm:flex-row items-center justify-center gap-8 lg:gap-16">
           <NuxtLink class="text-center group" to="https://npmjs.org/package/vue-email" target="_blank">
             <p class="text-6xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400">
-              {{ format(module.stats.downloads) }}+
+              {{ format(stats.stats.downloads) }}+
             </p>
             <p>monthly downloads</p>
           </NuxtLink>
 
           <NuxtLink class="text-center group" to="https://github.com/vue-email/vue-email" target="_blank">
             <p class="text-6xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400">
-              {{ format(module.stats.stars) }}+
+              {{ format(stats.stats.stars) }}+
             </p>
             <p>stars</p>
           </NuxtLink>
