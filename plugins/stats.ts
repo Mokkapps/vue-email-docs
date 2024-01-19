@@ -1,5 +1,11 @@
 export default defineNuxtPlugin(async () => {
   const stats = useStats()
 
-  stats.value = await $fetch('/api/stats')
+  if (process.server)
+    stats.value = await $fetch('/api/stats')
+
+  onNuxtReady(async () => {
+    if (!stats.value)
+      stats.value = await useFetch('/api/stats')
+  })
 })
