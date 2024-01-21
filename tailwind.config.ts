@@ -2,9 +2,9 @@ import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
-  content: [
-    'content/**/*.md',
-  ],
+  // content: [
+  //   'content/**/*.md',
+  // ],
   theme: {
     extend: {
       fontFamily: {
