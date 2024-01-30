@@ -25,11 +25,11 @@ export default defineNuxtConfig({
       'DM+Sans': [400, 500, 600, 700],
     },
   },
-  nitro: {
-    prerender: {
-      routes: ['/', '/getting-started', '/api/search.json', '/api/stats', '/api/releases.json', '/api/pulls.json'],
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     routes: ['/', '/getting-started', '/api/search.json', '/api/stats', '/api/releases.json', '/api/pulls.json'],
+  //   },
+  // },
   site: {
     name: 'Vue Email',
   },
